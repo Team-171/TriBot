@@ -67,15 +67,21 @@ public class DriveSubsystem extends SubsystemBase {
     backMotor.getEncoder().setPosition(0);
 
     // .getEncoder().setPositionConversionFactor()
+    frontLeftMotor.getEncoder().setPositionConversionFactor(0.7854166666666673);
+    frontRightMotor.getEncoder().setPositionConversionFactor(0.7854166666666673);
+    backMotor.getEncoder().setPositionConversionFactor(0.7854166666666673);
 
-    // pid
+    // pid?
+
   }
 
   /**
      * Drives the robot
      */
-    public void drive(){
-        
+    public void drive(double leftMotorSpeed, double rightMotorSpeed, double backMotorSpeed){
+        frontLeftMotor.set(leftMotorSpeed);
+        frontRightMotor.set(rightMotorSpeed);
+        backMotor.set(backMotorSpeed);
     }
 
   @Override

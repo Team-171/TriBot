@@ -22,8 +22,8 @@ public class RobotContainer {
 
     driveSubsystem = new DriveSubsystem();
 
-    driveSubsystem.setDefaultCommand(
-        new TankDriveCommand(driveSubsystem, () -> -driverController.getLeftY(), () -> -driverController.getRightX()));
+    driveSubsystem.setDefaultCommand(new DriveCommand(driveSubsystem, () -> driverController.getLeftX(), () -> driverController.getLeftY(), () -> driverController.getRightX()));
+        
 
     configureBindings();
   }
